@@ -90,7 +90,7 @@ void position(char m[10][10]) {
     draw(m);
 
 }
-
+//kskskskdskdkdkkd
 bool check(char m[10][10]) {
     int i, j;
 
