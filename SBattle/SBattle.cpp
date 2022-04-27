@@ -100,7 +100,6 @@ bool check(char m[10][10]) {
     return true;
 
 }
-
 int main() {
     using namespace std;
     setlocale(LC_ALL, "Russian");
