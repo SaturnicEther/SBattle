@@ -101,7 +101,6 @@ bool check(char m[10][10]) {
     return true;
 
 }
-//а теперь можно испробовать все эти функции в основной функции!
 int main() {
     using namespace std;
     setlocale(LC_ALL, "Russian");
