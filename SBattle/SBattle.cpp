@@ -3,7 +3,6 @@
 
 /*9*/
 
-
 void draw(char m[10][10]) {
     for (int i = 0; i < 10; i++) {              // draw
         for (int j = 0; j < 10; j++)
@@ -105,7 +104,31 @@ bool check(char m[10][10]) {
 int main() {
     using namespace std;
     setlocale(LC_ALL, "Russian");
-
+    int a, b, c, d;
+    const char* path = "setup.txt";
+    FILE* f;
+    if (fopen_s(&f, path, "wb") != NULL)
+    {
+        cout << "This file cannot be opened!";
+    }
+    else
+    {
+        a = 1, b = 1, c = 1, d = 4;
+        fwrite(&a, sizeof(int), 1, f);
+        fwrite(&b, sizeof(int), 1, f);
+        fwrite(&c, sizeof(int), 1, f);
+        fwrite(&d, sizeof(int), 1, f);
+        fclose(f);
+    }
+    if (fopen_s(&f, path, "rb") != NULL)
+    {
+        cout << "This file cannot be read!";
+    }
+    else
+    {
+        cout << a << b << c << d << endl;
+        fclose(f);
+    }
     char m1[10][10];              // 
     char m2[10][10];              // 
 
@@ -134,7 +157,7 @@ int main() {
         fl = true;
         while (fl) {
             do {
-                cout << "Ход 1-го игрока (верт, гориз.) :";  cin >> i >> j;
+                cout << "Ход 1-го игрока (верт, гориз.) :";  cout << a << b;
             } while ((i > 9 || j > 9));
 
             if (m2[i][j] != '.' && m2[i][j] != ' ') {
@@ -157,7 +180,7 @@ int main() {
         fl = true;
         while (fl) {
             do {
-                cout << "Ход 2-го игрока (верт, гориз.) :";  cin >> i >> j;
+                cout << "Ход 2-го игрока (верт, гориз.) :";  cout << c << d;
             } while ((i > 9 || j > 9));
 
             if (m1[i][j] != '.' && m1[i][j] != ' ') {
